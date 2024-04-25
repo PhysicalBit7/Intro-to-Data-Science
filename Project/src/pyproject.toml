@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ds-project"
+version = "0.1.0"
+description = "Intro to Data Science Final Project"
+authors = ["Tanner Patrom <80139182+PhysicalBit7@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+nbformat = "^5.10.4"
+pandas = "^2.2.1"
+matplotlib = "^3.8.4"
+seaborn = "^0.13.2"
+scikit-learn = "^1.4.1.post1"
+statsmodels = "^0.14.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

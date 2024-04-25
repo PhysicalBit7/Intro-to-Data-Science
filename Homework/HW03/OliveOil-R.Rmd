@@ -1,0 +1,74 @@
+---
+title: "Olive Oil Analysis R"
+output: pdf_document
+author: "Tanner Patrom"
+date: "02/06/2024"
+---
+
+```{r}
+library(tidyverse)
+library(corrplot)
+```
+
+```{r}
+oo_sensory = read_csv("olive_oil_sensory.csv", show_col_types = FALSE)
+```
+
+```{r}
+oo_chemical = read_csv("olive_oil_chemical.csv", show_col_types = FALSE)
+```
+
+```{r}
+combined = left_join(oo_sensory, oo_chemical, by="region")
+print(combined)
+```
+
+```{r}
+numeric = combined[-1]
+cMatrix = cor(numeric)
+corrplot(cMatrix, method = "color", type = "lower")
+
+```
+
+```{r}
+summary(numeric)
+```
+
+```{r}
+boxplot(numeric)
+```
+
+```{r}
+pairs(numeric, main="Olive Oil Metrics", labels = colnames(numeric)[1:11])
+```
+
+```{r}
+hist(numeric$s_yellow)
+```
+
+```{r}
+means = c()
+for(column in numeric){
+  means = c(means, mean(column))
+}
+
+print(means)
+```
+
+```{r}
+medians = c()
+for(column in numeric){
+  medians = c(medians, median(column))
+}
+
+print(medians)
+```
+
+```{r}
+diff = c()
+for(i in 1:11){
+  diff = c(diff, means[i] - medians[i])
+}
+
+print(diff)
+```

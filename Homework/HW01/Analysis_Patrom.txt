@@ -1,0 +1,620 @@
+For an analysis on the entire text we can simply use something like what we did in class...
+
+grep -o -i -E "(darkness|destruction|dissolution|dying|extermination|grave|kill|murder|necrosis|rage|ruin|slay|slew|tomb|trouble \
+    being|birth|beautiful|born|essence|growth|heart|joyful|life|soul|sparkle|spirit|vigor|vitality|zest)" \
+    Grimm_Fairy_Tale.txt | sort | uniq -c | sort -r >> count.txt
+
+The results are 
+
+130 beautiful
+104 heart
+ 66 kill
+ 42 life
+ 18 Life
+ 17 rage
+ 12 murder
+ 10 spirit
+ 10 grave
+ 10 born
+  6 joyful
+  6 birth
+  5 sparkle
+  4 soul
+  4 darkness
+  2 LIFE
+  2 HEART
+  1 slew
+  1 slay
+  1 ruin
+  1 dying
+  1 Murder
+
+For an analysis on every story I tried two different approaches to solving this problem. With the first I wanted to use only the commands we discussed but I just couldnt get it right. 
+From the start I knew I needed to cut parts of the file that were not apart of the story. I could have used head and tail but I opted for `sed` which 
+can delete ranges of lines...
+
+
+sed '1,120d' Grimm_Fairy_Tale.txt | sed '9117,9512d' > refinedText.txt
+
+
+For the first approach I used three seperate `grep` commands to grab every occurence of grim, cheery, and the story occurences along with
+line numbers and sorted them.
+
+
+____
+grep -o -n -E \
+"(THE GOLDEN BIRD|HANS IN LUCK|...)" \
+refinedText.txt| awk -F':' '{print $1 ":" "!" $2 ":"}' > stories.txt
+
+grep -o -n -i -E \
+"(darkness|destruction|dissolution|dying|extermination|grave|kill|murder|necrosis|rage|ruin|slay|slew|tomb|trouble)" \
+refinedText.txt| awk '{print $0 ","}' > grim.txt
+
+grep -o -n -i -E \
+"(being|birth|beautiful|born|essence|growth|heart|joyful|life|soul|sparkle|spirit|vigor|vitality|zest)" \
+refinedText.txt | awk '{print $0 ","}' > cheer.txt
+
+cat stories.txt grim.txt cheer.txt| sort -n | cut -d ':' -f 2- | tr -d '\n' | tr '!' '\n' | sed 's/,$//' > results.txt
+____
+
+I was attempting to build a sort of csv with STORY:LIST OF WORDS as the format. The first grep built stories.txt formatted as...
+
+1:!THE GOLDEN BIRD:
+210:!HANS IN LUCK:
+
+... the idea being that 1 was the line number, then we had the name of the story. `awk` helped me work with the colon added by the -n flag in grep for the line number. 
+I could seperate and add what I needed to. The exclamation point later helped me know where to start a newline. I had to seperate this grep from the others because I 
+did not need the -i flag. I wanted only those occurrences that were capitilized.
+
+The next two greps built grim and cheer.txt. I could use the -i flag with these to get all occurrences regardless of capitilization. 
+Line numbers were also added and `awk` again helped me to add a comma after every word...
+
+4:beautiful,
+32:beautiful,
+59:life,
+160:kill,
+192:kill,
+202:kill,
+
+Combining and sorting all of the files I got something like this...
+
+1:!THE GOLDEN BIRD:
+4:beautiful,
+32:beautiful,
+59:life,
+71:beautiful,
+108:beautiful,
+144:beautiful,
+145:joyful,
+160:kill,
+192:kill,
+202:kill,
+210:!HANS IN LUCK:
+213:born,
+221:being,
+241:trouble,
+242:heart,
+274:heart,
+297:trouble,
+307:kill,
+332:grave,
+341:born,
+346:trouble,
+353:beautiful,
+370:beautiful,
+387:heart,
+388:born,
+388:sparkle,
+408:heart,
+408:trouble,
+415:!JORINDA AND JORINDEL:
+
+... a sorted list of where the words occured along with the stories. After some work with `sed`, `tr`, and `cut` I had the file formatted like so...
+
+
+THE GOLDEN BIRD:beautiful,beautiful,life,beautiful,beautiful,beautiful,joyful,kill,kill,kill
+HANS IN LUCK:born,being,trouble,heart,heart,trouble,kill,grave,born,trouble,beautiful,beautiful,heart,born,sparkle,heart,trouble
+JORINDA AND JORINDEL:beautiful,beautiful,beautiful,beautiful,rage,beautiful,beautiful
+THE TRAVELLING MUSICIANS:spirit,life,spirit,heart,being,heart
+OLD SULTAN:kill,trouble,heart
+
+From here I just couldnt figure out how I would get a count of the words that occurred in each story as I would need to `uniq` and `sort` every line individually starting after the colon. 
+I think `awk` could have done it but I couldnt make it work.
+
+My next approach created an array of line numbers where the stories started and ended. From there I could loop over the array and grab the text for the specific story, 
+applying `grep` to search for the cheery and grim words. I found one occurence of an uppercase RUMPELSTILTSKIN that I had to account for with `sed`. The entire script was...
+
+____
+grep -o -n -E \
+"(THE GOLDEN BIRD|HANS IN LUCK|JORINDA AND JORINDEL|THE TRAVELLING MUSICIANS|OLD SULTAN|THE STRAW, THE COAL, AND THE BEAN|BRIAR ROSE|THE DOG AND THE SPARROW|THE TWELVE DANCING PRINCESSES|THE FISHERMAN AND HIS WIFE|THE WILLOW-WREN AND THE BEAR|THE FROG-PRINCE|CAT AND MOUSE IN PARTNERSHIP|THE GOOSE-GIRL|THE ADVENTURES OF CHANTICLEER AND PARTLET|1. HOW THEY WENT TO THE MOUNTAINS TO EAT NUTS|2. HOW CHANTICLEER AND PARTLET WENT TO VISIT MR KORBES|RAPUNZEL|FUNDEVOGEL|THE VALIANT LITTLE TAILOR|HANSEL AND GRETEL|THE MOUSE, THE BIRD, AND THE SAUSAGE|MOTHER HOLLE|LITTLE RED-CAP [LITTLE RED RIDING HOOD]|THE ROBBER BRIDEGROOM|TOM THUMB|RUMPELSTILTSKIN|CLEVER GRETEL|THE OLD MAN AND HIS GRANDSON|THE LITTLE PEASANT|FREDERICK AND CATHERINE|SWEETHEART ROLAND|SNOWDROP|THE PINK|CLEVER ELSIE|THE MISER IN THE BUSH|ASHPUTTEL|THE WHITE SNAKE|THE WOLF AND THE SEVEN LITTLE KIDS|THE QUEEN BEE|THE ELVES AND THE SHOEMAKER|THE JUNIPER-TREE|THE TURNIP|CLEVER HANS|THE THREE LANGUAGES|THE FOX AND THE CAT|THE FOUR CLEVER BROTHERS|LILY AND THE LION|THE FOX AND THE HORSE|THE BLUE LIGHT|THE RAVEN|THE GOLDEN GOOSE|THE WATER OF LIFE|THE TWELVE HUNTSMEN|THE KING OF THE GOLDEN MOUNTAIN|DOCTOR KNOWALL|THE SEVEN RAVENS|THE WEDDING OF MRS FOX|FIRST STORY|SECOND STORY|THE SALAD|THE STORY OF THE YOUTH WHO WENT FORTH TO LEARN WHAT FEAR WAS|KING GRISLY-BEARD|IRON HANS|CAT-SKIN|SNOW-WHITE AND ROSE-RED)" \
+ refinedText.txt | sed 's/:.*//' > lines.txt
+
+# Catching an uppercase RUMPELSTILTSKIN
+sed -i '' '27d' lines.txt
+
+# Read numbers from file into the array
+while IFS= read -r line; do
+    lineNumberArray+=("$line")
+done < lines.txt
+
+#Needed for the last story
+lineNumberArray+=(9116)
+
+# Loop through array elements
+arrayLength=${#lineNumberArray[@]}
+for ((i=0; i<arrayLength; i++)); do
+    current="${lineNumberArray[i]}"
+    next=$((i + 1))
+    if [ $next -lt $arrayLength ]; then
+        nextNumber="${lineNumberArray[next]}"
+        story=$(sed -n "${current},${nextNumber}p" refinedText.txt)
+        sed -n "${current}p" refinedText.txt >> count.txt
+        echo -e "\t---Grim Words---" >> count.txt
+        grep -o -i -E "(darkness|destruction|dissolution|dying|extermination|grave|kill|murder|necrosis|rage|ruin|slay|slew|tomb|trouble)" <<< $story | sort | uniq -c | sort -r >> count.txt
+        echo -e "\t---Cheery Words---" >> count.txt
+        grep -o -i -E "(being|birth|beautiful|born|essence|growth|heart|joyful|life|soul|sparkle|spirit|vigor|vitality|zest)" <<< $story | sort | uniq -c | sort -r >> count.txt
+    fi
+done 
+____
+
+The loop runs over a list of the line numbers that the storys start on and where the next begins. I had to set up an if statement to catch if we were at the last index. `sed` helped me get the
+each story by the line numbers. It also helped me print a header for the story. From there I could use two `grep` commands to seperate and sort the cheery words and the grim words. I had to use >>
+in order to append to the file and not overwrite every iteration.
+
+At first my grep command looked like so...
+
+grep -o -i -E "(being|birth|beautiful|born|essence|growth|heart|joyful|life|soul|sparkle|spirit|vigor|vitality|zest)" <<< $story | uniq -c | sort -r >> count.txt
+
+... but my output wasnt coming back correct. I had situations like so
+
+THE GOLDEN BIRD
+	---Grim Words---
+   3 kill
+	---Cheery Words---
+   3 beautiful
+   2 beautiful
+   1 life
+   1 joyful
+
+beautiful should be combined but wasnt. To fix I had to sort twice with what is above
+
+The output is pasted below
+
+THE GOLDEN BIRD
+	---Grim Words---
+   3 kill
+	---Cheery Words---
+   5 beautiful
+   1 life
+   1 joyful
+HANS IN LUCK
+	---Grim Words---
+   4 trouble
+   1 kill
+   1 grave
+	---Cheery Words---
+   4 heart
+   3 born
+   2 beautiful
+   1 sparkle
+   1 being
+JORINDA AND JORINDEL
+	---Grim Words---
+   1 rage
+	---Cheery Words---
+   6 beautiful
+THE TRAVELLING MUSICIANS
+	---Grim Words---
+	---Cheery Words---
+   2 spirit
+   2 heart
+   1 life
+   1 being
+OLD SULTAN
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+   1 heart
+THE STRAW, THE COAL, AND THE BEAN
+	---Grim Words---
+	---Cheery Words---
+   3 heart
+BRIAR ROSE
+	---Grim Words---
+	---Cheery Words---
+   6 beautiful
+   1 life
+   1 heart
+THE DOG AND THE SPARROW
+	---Grim Words---
+   6 kill
+   3 rage
+	---Cheery Words---
+   4 life
+THE TWELVE DANCING PRINCESSES
+	---Grim Words---
+	---Cheery Words---
+   2 beautiful
+   1 sparkle
+   1 life
+   1 heart
+THE FISHERMAN AND HIS WIFE
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 being
+   1 heart
+   1 beautiful
+THE WILLOW-WREN AND THE BEAR
+	---Grim Words---
+   1 dying
+	---Cheery Words---
+   1 heart
+   1 beautiful
+THE FROG-PRINCE
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 beautiful
+   1 heart
+CAT AND MOUSE IN PARTNERSHIP
+	---Grim Words---
+	---Cheery Words---
+   1 life
+THE GOOSE-GIRL
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   2 life
+   2 beautiful
+   1 being
+THE ADVENTURES OF CHANTICLEER AND PARTLET
+	---Grim Words---
+	---Cheery Words---
+1. HOW THEY WENT TO THE MOUNTAINS TO EAT NUTS
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   1 heart
+2. HOW CHANTICLEER AND PARTLET WENT TO VISIT MR KORBES
+	---Grim Words---
+   3 grave
+   1 kill
+	---Cheery Words---
+   1 heart
+RAPUNZEL
+	---Grim Words---
+	---Cheery Words---
+   5 beautiful
+   2 heart
+   1 life
+   1 joyful
+   1 birth
+FUNDEVOGEL
+	---Grim Words---
+	---Cheery Words---
+   1 heart
+THE VALIANT LITTLE TAILOR
+	---Grim Words---
+   5 kill
+   1 rage
+   1 murder
+	---Cheery Words---
+   3 life
+   2 heart
+   1 spirit
+   1 born
+   1 beautiful
+HANSEL AND GRETEL
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   2 heart
+   1 born
+   1 being
+   1 beautiful
+THE MOUSE, THE BIRD, AND THE SAUSAGE
+	---Grim Words---
+	---Cheery Words---
+   3 life
+   1 being
+MOTHER HOLLE
+	---Grim Words---
+   1 rage
+   1 grave
+   1 darkness
+	---Cheery Words---
+   3 beautiful
+   1 being
+THE ROBBER BRIDEGROOM
+	---Grim Words---
+   8 murder
+   2 kill
+	---Cheery Words---
+   3 beautiful
+   2 soul
+   1 heart
+TOM THUMB
+	---Grim Words---
+   3 kill
+	---Cheery Words---
+   4 heart
+   2 being
+   1 born
+RUMPELSTILTSKIN
+	---Grim Words---
+   1 trouble
+   1 rage
+	---Cheery Words---
+   1 life
+   1 heart
+   1 birth
+   1 beautiful
+CLEVER GRETEL
+	---Grim Words---
+   1 kill
+	---Cheery Words---
+   3 heart
+THE OLD MAN AND HIS GRANDSON
+	---Grim Words---
+	---Cheery Words---
+THE LITTLE PEASANT
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   1 soul
+   1 heart
+   1 being
+   1 beautiful
+FREDERICK AND CATHERINE
+	---Grim Words---
+   1 Murder
+	---Cheery Words---
+   1 HEART
+SWEETHEART ROLAND
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+  10 heart
+   4 beautiful
+   1 being
+   1 HEART
+SNOWDROP
+	---Grim Words---
+   4 rage
+   1 kill
+	---Cheery Words---
+   5 heart
+   4 beautiful
+   3 life
+THE PINK
+	---Grim Words---
+   2 kill
+   1 trouble
+   1 murder
+   1 grave
+	---Cheery Words---
+   7 beautiful
+   6 heart
+   3 life
+   1 joyful
+   1 birth
+CLEVER ELSIE
+	---Grim Words---
+   5 kill
+	---Cheery Words---
+THE MISER IN THE BUSH
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   3 life
+   3 heart
+   1 soul
+   1 joyful
+ASHPUTTEL
+	---Grim Words---
+   3 grave
+	---Cheery Words---
+   6 beautiful
+   2 heart
+   1 being
+THE WHITE SNAKE
+	---Grim Words---
+   3 trouble
+   2 kill
+	---Cheery Words---
+   4 Life
+   3 heart
+   2 beautiful
+   1 life
+   1 birth
+   1 being
+THE WOLF AND THE SEVEN LITTLE KIDS
+	---Grim Words---
+	---Cheery Words---
+THE QUEEN BEE
+	---Grim Words---
+   2 kill
+   1 trouble
+	---Cheery Words---
+   2 beautiful
+   1 life
+THE ELVES AND THE SHOEMAKER
+	---Grim Words---
+   2 trouble
+	---Cheery Words---
+   1 heart
+THE JUNIPER-TREE
+	---Grim Words---
+   9 kill
+   1 trouble
+	---Cheery Words---
+  20 beautiful
+   6 heart
+   3 spirit
+   2 being
+   1 born
+THE TURNIP
+	---Grim Words---
+   2 murder
+   1 rage
+   1 kill
+	---Cheery Words---
+CLEVER HANS
+	---Grim Words---
+	---Cheery Words---
+THE THREE LANGUAGES
+	---Grim Words---
+   2 kill
+   1 trouble
+   1 rage
+	---Cheery Words---
+   1 life
+THE FOX AND THE CAT
+	---Grim Words---
+	---Cheery Words---
+   1 life
+THE FOUR CLEVER BROTHERS
+	---Grim Words---
+   6 kill
+	---Cheery Words---
+   1 heart
+   1 beautiful
+LILY AND THE LION
+	---Grim Words---
+   2 trouble
+	---Cheery Words---
+   3 heart
+   2 life
+   2 beautiful
+THE FOX AND THE HORSE
+	---Grim Words---
+	---Cheery Words---
+   1 heart
+THE BLUE LIGHT
+	---Grim Words---
+   1 trouble
+   1 darkness
+	---Cheery Words---
+   1 life
+THE RAVEN
+	---Grim Words---
+   1 trouble
+   1 rage
+   1 kill
+   1 grave
+	---Cheery Words---
+   2 heart
+   1 life
+   1 birth
+THE GOLDEN GOOSE
+	---Grim Words---
+	---Cheery Words---
+   2 heart
+   1 beautiful
+   1 LIFE
+THE WATER OF LIFE
+	---Grim Words---
+   1 trouble
+   1 slew
+   1 slay
+   1 ruin
+   1 rage
+   1 kill
+	---Cheery Words---
+  13 Life
+   7 beautiful
+   4 heart
+   2 life
+   2 born
+   1 joyful
+   1 LIFE
+THE TWELVE HUNTSMEN
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 heart
+THE KING OF THE GOLDEN MOUNTAIN
+	---Grim Words---
+   3 trouble
+	---Cheery Words---
+   1 life
+   1 heart
+   1 being
+   1 beautiful
+   1 Life
+DOCTOR KNOWALL
+	---Grim Words---
+   1 kill
+	---Cheery Words---
+   1 heart
+   1 being
+THE SEVEN RAVENS
+	---Grim Words---
+   1 rage
+	---Cheery Words---
+   2 beautiful
+   1 birth
+THE WEDDING OF MRS FOX
+	---Grim Words---
+	---Cheery Words---
+FIRST STORY
+	---Grim Words---
+	---Cheery Words---
+   1 joyful
+   1 beautiful
+SECOND STORY
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+THE SALAD
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+  10 heart
+   6 beautiful
+   1 being
+THE STORY OF THE YOUTH WHO WENT FORTH TO LEARN WHAT FEAR WAS
+	---Grim Words---
+   2 trouble
+   2 kill
+   1 darkness
+	---Cheery Words---
+   3 spirit
+   2 beautiful
+   1 life
+KING GRISLY-BEARD
+	---Grim Words---
+	---Cheery Words---
+   5 beautiful
+   1 heart
+IRON HANS
+	---Grim Words---
+	---Cheery Words---
+   1 spirit
+   1 heart
+CAT-SKIN
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+  10 beautiful
+   2 sparkle
+   1 heart
+SNOW-WHITE AND ROSE-RED
+	---Grim Words---
+   1 rage
+   1 darkness
+	---Cheery Words---
+   5 beautiful
+   4 heart
+   1 sparkle
+   1 life
+   1 being
+
+
+
+
+

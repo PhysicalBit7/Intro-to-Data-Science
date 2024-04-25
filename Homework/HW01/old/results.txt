@@ -1,0 +1,67 @@
+
+THE GOLDEN BIRD:beautiful,beautiful,life,beautiful,beautiful,beautiful,joyful,kill,kill,kill
+HANS IN LUCK:born,being,trouble,heart,heart,trouble,kill,grave,born,trouble,beautiful,beautiful,heart,born,sparkle,heart,trouble
+JORINDA AND JORINDEL:beautiful,beautiful,beautiful,beautiful,rage,beautiful,beautiful
+THE TRAVELLING MUSICIANS:spirit,life,spirit,heart,being,heart
+OLD SULTAN:kill,trouble,heart
+THE STRAW, THE COAL, AND THE BEAN:heart,heart,heart
+BRIAR ROSE:beautiful,beautiful,life,heart,beautiful,beautiful,beautiful,beautiful
+THE DOG AND THE SPARROW:kill,kill,kill,kill,rage,life,life,rage,life,rage,kill,life,kill
+THE TWELVE DANCING PRINCESSES:beautiful,heart,life,beautiful,sparkle
+THE FISHERMAN AND HIS WIFE:heart,beautiful,being,trouble,being
+THE WILLOW-WREN AND THE BEAR:beautiful,dying,heart
+THE FROG-PRINCE:trouble,beautiful,beautiful,heart
+CAT AND MOUSE IN PARTNERSHIP:life
+THE GOOSE-GIRL:beautiful,kill,kill,being,life,beautiful,life
+THE ADVENTURES OF CHANTICLEER AND PARTLET:
+1. HOW THEY WENT TO THE MOUNTAINS TO EAT NUTS:heart,trouble
+2. HOW CHANTICLEER AND PARTLET WENT TO VISIT MR KORBES:heart,kill,grave,grave,grave
+RAPUNZEL:beautiful,beautiful,beautiful,heart,heart,beautiful,beautiful,life,birth,joyful
+FUNDEVOGEL:heart
+THE VALIANT LITTLE TAILOR:spirit,heart,kill,kill,murder,kill,beautiful,life,rage,kill,heart,born,life,kill,life
+HANSEL AND GRETEL:heart,heart,beautiful,born,kill,being,kill
+THE MOUSE, THE BIRD, AND THE SAUSAGE:being,life,life,life
+MOTHER HOLLE:beautiful,beautiful,rage,beautiful,grave,being,darkness
+THE ROBBER BRIDEGROOM:beautiful,soul,murder,murder,murder,kill,heart,beautiful,murder,murder,soul,murder,murder,kill,beautiful,murder
+TOM THUMB:born,heart,being,kill,kill,heart,heart,heart,being,kill
+RUMPELSTILTSKIN:beautiful,life,heart,birth
+RUMPELSTILTSKIN:rage,trouble
+CLEVER GRETEL:heart,kill,heart,heart
+THE OLD MAN AND HIS GRANDSON:
+THE LITTLE PEASANT:being,heart,kill,beautiful,kill,soul
+FREDERICK AND CATHERINE:Murder
+SWEETHEART ROLAND:HEART,beautiful,heart,kill,heart,heart,trouble,heart,beautiful,heart,beautiful,heart,being,beautiful,heart,heart,heart,heart
+SNOWDROP:beautiful,beautiful,rage,heart,life,heart,kill,beautiful,life,heart,beautiful,rage,life,heart,heart,rage,rage
+THE PINK:joyful,birth,trouble,beautiful,beautiful,heart,heart,heart,life,life,heart,kill,heart,kill,beautiful,murder,life,beautiful,beautiful,beautiful,grave,beautiful,heart
+CLEVER ELSIE:kill,kill,kill,kill,kill
+THE MISER IN THE BUSH:trouble,heart,heart,heart,joyful,soul,life,life,life
+ASHPUTTEL:grave,beautiful,grave,heart,heart,grave,beautiful,beautiful,beautiful,being,beautiful,beautiful
+THE WHITE SNAKE:beautiful,trouble,trouble,kill,trouble,being,heart,kill,life,birth,heart,Life,Life,Life,beautiful,Life,heart
+THE WOLF AND THE SEVEN LITTLE KIDS:
+THE QUEEN BEE:trouble,kill,kill,beautiful,life,beautiful
+THE ELVES AND THE SHOEMAKER:heart,trouble,trouble
+THE JUNIPER-TREE:beautiful,heart,heart,born,heart,beautiful,spirit,spirit,kill,spirit,being,beautiful,heart,kill,beautiful,beautiful,beautiful,kill,beautiful,kill,beautiful,being,beautiful,beautiful,kill,beautiful,kill,beautiful,beautiful,kill,beautiful,heart,beautiful,kill,beautiful,beautiful,beautiful,beautiful,trouble,kill,beautiful,heart
+THE TURNIP:rage,kill,murder,murder
+CLEVER HANS:
+THE THREE LANGUAGES:rage,kill,kill,life,trouble
+THE FOX AND THE CAT:life
+THE FOUR CLEVER BROTHERS:kill,beautiful,kill,kill,heart,kill,kill,kill
+LILY AND THE LION:beautiful,life,life,heart,heart,trouble,heart,beautiful,trouble
+THE FOX AND THE HORSE:heart
+THE BLUE LIGHT:trouble,darkness,life
+THE RAVEN:trouble,birth,kill,grave,heart,life,rage,heart
+THE GOLDEN GOOSE:beautiful,heart,heart
+THE WATER OF LIFE:LIFE,born,Life,Life,rage,Life,heart,Life,Life,Life,beautiful,beautiful,joyful,Life,beautiful,Life,slay,Life,heart,Life,beautiful,slew,ruin,Life,Life,Life,trouble,beautiful,life,life,heart,heart,kill,beautiful,beautiful,born
+THE TWELVE HUNTSMEN:trouble,heart,heart
+THE KING OF THE GOLDEN MOUNTAIN:being,trouble,heart,trouble,trouble,beautiful,Life,life
+DOCTOR KNOWALL:being,heart,kill
+THE SEVEN RAVENS:rage,beautiful,beautiful,birth
+THE WEDDING OF MRS FOX:
+FIRST STORY:beautiful,joyful
+SECOND STORY:trouble
+THE SALAD:heart,heart,heart,beautiful,heart,beautiful,heart,heart,being,heart,kill,trouble,beautiful,beautiful,heart,beautiful,heart,beautiful,heart
+THE STORY OF THE YOUTH WHO WENT FORTH TO LEARN WHAT FEAR WAS:trouble,trouble,beautiful,beautiful,spirit,life,kill,kill,spirit,spirit,darkness
+KING GRISLY-BEARD:beautiful,beautiful,beautiful,beautiful,beautiful,heart
+IRON HANS:heart,spirit
+CAT-SKIN:beautiful,beautiful,beautiful,beautiful,beautiful,trouble,beautiful,beautiful,heart,sparkle,beautiful,sparkle,beautiful,beautiful
+SNOW-WHITE AND ROSE-RED:beautiful,darkness,heart,heart,heart,beautiful,being,sparkle,beautiful,rage,heart,beautiful,life,beautiful,born

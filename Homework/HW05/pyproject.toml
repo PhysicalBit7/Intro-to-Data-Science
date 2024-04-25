@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "datasciencehw05"
+version = "0.1.0"
+description = ""
+authors = ["Tanner Patrom"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.0"
+matplotlib = "^3.8.2"
+scikit-learn = "^1.4.0"
+pyarrow = "^15.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,455 @@
+THE GOLDEN BIRD
+	---Grim Words---
+   3 kill
+	---Cheery Words---
+   5 beautiful
+   1 life
+   1 joyful
+HANS IN LUCK
+	---Grim Words---
+   4 trouble
+   1 kill
+   1 grave
+	---Cheery Words---
+   4 heart
+   3 born
+   2 beautiful
+   1 sparkle
+   1 being
+JORINDA AND JORINDEL
+	---Grim Words---
+   1 rage
+	---Cheery Words---
+   6 beautiful
+THE TRAVELLING MUSICIANS
+	---Grim Words---
+	---Cheery Words---
+   2 spirit
+   2 heart
+   1 life
+   1 being
+OLD SULTAN
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+   1 heart
+THE STRAW, THE COAL, AND THE BEAN
+	---Grim Words---
+	---Cheery Words---
+   3 heart
+BRIAR ROSE
+	---Grim Words---
+	---Cheery Words---
+   6 beautiful
+   1 life
+   1 heart
+THE DOG AND THE SPARROW
+	---Grim Words---
+   6 kill
+   3 rage
+	---Cheery Words---
+   4 life
+THE TWELVE DANCING PRINCESSES
+	---Grim Words---
+	---Cheery Words---
+   2 beautiful
+   1 sparkle
+   1 life
+   1 heart
+THE FISHERMAN AND HIS WIFE
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 being
+   1 heart
+   1 beautiful
+THE WILLOW-WREN AND THE BEAR
+	---Grim Words---
+   1 dying
+	---Cheery Words---
+   1 heart
+   1 beautiful
+THE FROG-PRINCE
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 beautiful
+   1 heart
+CAT AND MOUSE IN PARTNERSHIP
+	---Grim Words---
+	---Cheery Words---
+   1 life
+THE GOOSE-GIRL
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   2 life
+   2 beautiful
+   1 being
+THE ADVENTURES OF CHANTICLEER AND PARTLET
+	---Grim Words---
+	---Cheery Words---
+1. HOW THEY WENT TO THE MOUNTAINS TO EAT NUTS
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   1 heart
+2. HOW CHANTICLEER AND PARTLET WENT TO VISIT MR KORBES
+	---Grim Words---
+   3 grave
+   1 kill
+	---Cheery Words---
+   1 heart
+RAPUNZEL
+	---Grim Words---
+	---Cheery Words---
+   5 beautiful
+   2 heart
+   1 life
+   1 joyful
+   1 birth
+FUNDEVOGEL
+	---Grim Words---
+	---Cheery Words---
+   1 heart
+THE VALIANT LITTLE TAILOR
+	---Grim Words---
+   5 kill
+   1 rage
+   1 murder
+	---Cheery Words---
+   3 life
+   2 heart
+   1 spirit
+   1 born
+   1 beautiful
+HANSEL AND GRETEL
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   2 heart
+   1 born
+   1 being
+   1 beautiful
+THE MOUSE, THE BIRD, AND THE SAUSAGE
+	---Grim Words---
+	---Cheery Words---
+   3 life
+   1 being
+MOTHER HOLLE
+	---Grim Words---
+   1 rage
+   1 grave
+   1 darkness
+	---Cheery Words---
+   3 beautiful
+   1 being
+THE ROBBER BRIDEGROOM
+	---Grim Words---
+   8 murder
+   2 kill
+	---Cheery Words---
+   3 beautiful
+   2 soul
+   1 heart
+TOM THUMB
+	---Grim Words---
+   3 kill
+	---Cheery Words---
+   4 heart
+   2 being
+   1 born
+RUMPELSTILTSKIN
+	---Grim Words---
+   1 trouble
+   1 rage
+	---Cheery Words---
+   1 life
+   1 heart
+   1 birth
+   1 beautiful
+CLEVER GRETEL
+	---Grim Words---
+   1 kill
+	---Cheery Words---
+   3 heart
+THE OLD MAN AND HIS GRANDSON
+	---Grim Words---
+	---Cheery Words---
+THE LITTLE PEASANT
+	---Grim Words---
+   2 kill
+	---Cheery Words---
+   1 soul
+   1 heart
+   1 being
+   1 beautiful
+FREDERICK AND CATHERINE
+	---Grim Words---
+   1 Murder
+	---Cheery Words---
+   1 HEART
+SWEETHEART ROLAND
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+  10 heart
+   4 beautiful
+   1 being
+   1 HEART
+SNOWDROP
+	---Grim Words---
+   4 rage
+   1 kill
+	---Cheery Words---
+   5 heart
+   4 beautiful
+   3 life
+THE PINK
+	---Grim Words---
+   2 kill
+   1 trouble
+   1 murder
+   1 grave
+	---Cheery Words---
+   7 beautiful
+   6 heart
+   3 life
+   1 joyful
+   1 birth
+CLEVER ELSIE
+	---Grim Words---
+   5 kill
+	---Cheery Words---
+THE MISER IN THE BUSH
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   3 life
+   3 heart
+   1 soul
+   1 joyful
+ASHPUTTEL
+	---Grim Words---
+   3 grave
+	---Cheery Words---
+   6 beautiful
+   2 heart
+   1 being
+THE WHITE SNAKE
+	---Grim Words---
+   3 trouble
+   2 kill
+	---Cheery Words---
+   4 Life
+   3 heart
+   2 beautiful
+   1 life
+   1 birth
+   1 being
+THE WOLF AND THE SEVEN LITTLE KIDS
+	---Grim Words---
+	---Cheery Words---
+THE QUEEN BEE
+	---Grim Words---
+   2 kill
+   1 trouble
+	---Cheery Words---
+   2 beautiful
+   1 life
+THE ELVES AND THE SHOEMAKER
+	---Grim Words---
+   2 trouble
+	---Cheery Words---
+   1 heart
+THE JUNIPER-TREE
+	---Grim Words---
+   9 kill
+   1 trouble
+	---Cheery Words---
+  20 beautiful
+   6 heart
+   3 spirit
+   2 being
+   1 born
+THE TURNIP
+	---Grim Words---
+   2 murder
+   1 rage
+   1 kill
+	---Cheery Words---
+CLEVER HANS
+	---Grim Words---
+	---Cheery Words---
+THE THREE LANGUAGES
+	---Grim Words---
+   2 kill
+   1 trouble
+   1 rage
+	---Cheery Words---
+   1 life
+THE FOX AND THE CAT
+	---Grim Words---
+	---Cheery Words---
+   1 life
+THE FOUR CLEVER BROTHERS
+	---Grim Words---
+   6 kill
+	---Cheery Words---
+   1 heart
+   1 beautiful
+LILY AND THE LION
+	---Grim Words---
+   2 trouble
+	---Cheery Words---
+   3 heart
+   2 life
+   2 beautiful
+THE FOX AND THE HORSE
+	---Grim Words---
+	---Cheery Words---
+   1 heart
+THE BLUE LIGHT
+	---Grim Words---
+   1 trouble
+   1 darkness
+	---Cheery Words---
+   1 life
+THE RAVEN
+	---Grim Words---
+   1 trouble
+   1 rage
+   1 kill
+   1 grave
+	---Cheery Words---
+   2 heart
+   1 life
+   1 birth
+THE GOLDEN GOOSE
+	---Grim Words---
+	---Cheery Words---
+   2 heart
+   1 beautiful
+   1 LIFE
+THE WATER OF LIFE
+	---Grim Words---
+   1 trouble
+   1 slew
+   1 slay
+   1 ruin
+   1 rage
+   1 kill
+	---Cheery Words---
+  13 Life
+   7 beautiful
+   4 heart
+   2 life
+   2 born
+   1 joyful
+   1 LIFE
+THE TWELVE HUNTSMEN
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+   2 heart
+THE KING OF THE GOLDEN MOUNTAIN
+	---Grim Words---
+   3 trouble
+	---Cheery Words---
+   1 life
+   1 heart
+   1 being
+   1 beautiful
+   1 Life
+DOCTOR KNOWALL
+	---Grim Words---
+   1 kill
+	---Cheery Words---
+   1 heart
+   1 being
+THE SEVEN RAVENS
+	---Grim Words---
+   1 rage
+	---Cheery Words---
+   2 beautiful
+   1 birth
+THE WEDDING OF MRS FOX
+	---Grim Words---
+	---Cheery Words---
+FIRST STORY
+	---Grim Words---
+	---Cheery Words---
+   1 joyful
+   1 beautiful
+SECOND STORY
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+THE SALAD
+	---Grim Words---
+   1 trouble
+   1 kill
+	---Cheery Words---
+  10 heart
+   6 beautiful
+   1 being
+THE STORY OF THE YOUTH WHO WENT FORTH TO LEARN WHAT FEAR WAS
+	---Grim Words---
+   2 trouble
+   2 kill
+   1 darkness
+	---Cheery Words---
+   3 spirit
+   2 beautiful
+   1 life
+KING GRISLY-BEARD
+	---Grim Words---
+	---Cheery Words---
+   5 beautiful
+   1 heart
+IRON HANS
+	---Grim Words---
+	---Cheery Words---
+   1 spirit
+   1 heart
+CAT-SKIN
+	---Grim Words---
+   1 trouble
+	---Cheery Words---
+  10 beautiful
+   2 sparkle
+   1 heart
+SNOW-WHITE AND ROSE-RED
+	---Grim Words---
+   1 rage
+   1 darkness
+	---Cheery Words---
+   5 beautiful
+   4 heart
+   1 sparkle
+   1 life
+   1 being
+ 130 beautiful
+ 104 heart
+  66 kill
+  42 life
+  18 Life
+  17 rage
+  12 murder
+  10 spirit
+  10 grave
+  10 born
+   6 joyful
+   6 birth
+   5 sparkle
+   4 soul
+   4 darkness
+   2 LIFE
+   2 HEART
+   1 slew
+   1 slay
+   1 ruin
+   1 dying
+   1 Murder
